@@ -954,15 +954,23 @@ function toggleCard(btn) {
 
 
 <script>
+// Function to toggle cards (accordion-style)
 function toggleCard(btn) {
   const card = btn.closest('.card');
   const allCards = document.querySelectorAll('.card.category-card');
+
+  // Close all other cards when one is clicked
   allCards.forEach(c => {
-    if (c !== card) c.classList.remove('open');
-    if (c !== card) c.querySelector('.card-content').style.maxHeight = null;
+    if (c !== card) {
+      c.classList.remove('open');
+      c.querySelector('.card-content').style.maxHeight = null;
+    }
   });
+
+  // Toggle the clicked card
   card.classList.toggle('open');
   const content = card.querySelector('.card-content');
+
   if (card.classList.contains('open')) {
     content.style.maxHeight = content.scrollHeight + "px";
     content.style.transition = "max-height .5s cubic-bezier(.42,1.18,.46,1)";
@@ -970,7 +978,22 @@ function toggleCard(btn) {
     content.style.maxHeight = null;
   }
 }
+
+// This code runs after the page content has loaded
+document.addEventListener('DOMContentLoaded', function() {
+  // Select ALL cards with the class '.category-card'
+  const allCards = document.querySelectorAll('.card.category-card');
+
+  // Loop through each card and open it by default
+  allCards.forEach(card => {
+    card.classList.add('open');
+    const content = card.querySelector('.card-content');
+    // Set the max-height so the content is visible
+    content.style.maxHeight = content.scrollHeight + "px";
+  });
+});
 </script>
+
 
 
 </body>
