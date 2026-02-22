@@ -290,25 +290,57 @@
     <div id="short-form" class="tab-content active video-tab">
         <div class="category-head"><i class="fa fa-user"></i> Talking Head</div>
         <div class="grid-3">
-            <div class="media-card ratio-9-16"><video src="talkinghead1.mp4" controls playsinline></video></div>
-            <div class="media-card ratio-9-16"><video src="talkinghead2.mp4" controls playsinline></video></div>
-            <div class="media-card ratio-9-16"><video src="talkinghead3.mp4" controls playsinline></video></div>
+            <div class="media-card ratio-9-16"><video src="talkinghead1.mp4" controls controlsList="nodownload"
+            oncontextmenu="return false;" 
+    style="-webkit-touch-callout: none;"
+
+            playsinline
+
+            ></video></div>
+            <div class="media-card ratio-9-16"><video src="talkinghead2.mp4" controls controlsList="nodownload"
+            oncontextmenu="return false;" 
+    style="-webkit-touch-callout: none;"
+
+            playsinline></video></div>
+            <div class="media-card ratio-9-16"><video src="talkinghead3.mp4" controls controlsList="nodownload"
+            oncontextmenu="return false;" 
+    style="-webkit-touch-callout: none;"
+playsinline></video></div>
         </div>
 
         <div class="category-head"><i class="fa fa-mask"></i> Faceless</div>
         <div class="grid-3">
-            <div class="media-card ratio-9-16"><video src="faceless1.mp4" controls playsinline></video></div>
-            <div class="media-card ratio-9-16"><video src="faceless2.mp4" controls playsinline></video></div>
-            <div class="media-card ratio-9-16"><video src="faceless3.mp4" controls playsinline></video></div>
+            <div class="media-card ratio-9-16"><video src="faceless1.mp4" controls controlsList="nodownload"
+            oncontextmenu="return false;" 
+    style="-webkit-touch-callout: none;"
+playsinline></video></div>
+            <div class="media-card ratio-9-16"><video src="faceless2.mp4" controls controlsList="nodownload"
+            oncontextmenu="return false;" 
+    style="-webkit-touch-callout: none;"
+playsinline></video></div>
+            <div class="media-card ratio-9-16"><video src="faceless3.mp4" controls controlsList="nodownload"
+            oncontextmenu="return false;" 
+    style="-webkit-touch-callout: none;"
+playsinline></video></div>
         </div>
     </div>
 
     <div id="long-form" class="tab-content video-tab">
         <div class="category-head"><i class="fa fa-play"></i> Long Form Video</div>
         <div class="grid-3">
-            <div class="media-card ratio-16-9"><video src="yt_1.mp4" controls playsinline></video></div>
-            <div class="media-card ratio-16-9"><video src="yt_2.mp4" controls playsinline></video></div>
-            <div class="media-card ratio-16-9"><video src="yt_3.mp4" controls playsinline></video></div>
+            <div class="media-card ratio-16-9"><video src="yt_1.mp4" controls controlsList="nodownload"
+            oncontextmenu="return false;" 
+    style="-webkit-touch-callout: none;"
+playsinline></video></div>
+            <div class="media-card ratio-16-9"><video src="yt_2.mp4" controls controlsList="nodownload"
+            oncontextmenu="return false;" 
+    style="-webkit-touch-callout: none;"
+playsinline></video></div>
+            <div class="media-card ratio-16-9"><video src="yt_3.mp4" controls controlsList="nodownload"
+            oncontextmenu="return false;" 
+    style="-webkit-touch-callout: none;"
+
+playsinline></video></div>
         </div>
     </div>
 </section>
@@ -476,6 +508,17 @@ Keep it up, Shahid!"</p>
     setInterval(() => { currentIndex++; updateSlider(); }, 5000);
     
 </script>
+
+<script>
+  // Sabhi images aur videos pe long-press / right-click disable karne ke liye
+  document.addEventListener('contextmenu', function(event) {
+    if (event.target.tagName === 'IMG' || event.target.tagName === 'VIDEO') {
+      event.preventDefault();
+    }
+  });
+</script>
+
+
 
 </body>
 </html>
