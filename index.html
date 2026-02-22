@@ -3,1000 +3,479 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title> Mohammad Shahid | Video Editor Portfolio</title>
-  <!-- Google Fonts for premium look -->
+  <title>Shahid | Video Editor & Designer</title>
+  
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet" />
-  <!-- Font Awesome for icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-  <!-- AOS Animations -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet" />
+
   <style>
-  
-  
-  html{
-    max-width: 100vw;
-    scroll-behavior: smooth;
+  /* --- THEME VARIABLES --- */
+  :root {
+      --bg-dark: #050511;
+      --bg-card: #0f1021;
+      --bg-glass: rgba(15, 16, 33, 0.95);
+      --text-main: #ffffff;
+      --text-body: #b3b3cc;
+      --primary-color: #6d28d9;
+      --accent-glow: #8b5cf6;
+      --main-gradient: linear-gradient(135deg, #7c3aed 0%, #2563eb 100%);
   }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; overflow-x: hidden; }
   
-    body {
-      background: linear-gradient(120deg, #f7fbff 70%, #e3f2fd 100%);
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      color: #22304a;
+  body {
+      background-color: var(--bg-dark);
+      background-image: radial-gradient(circle at 10% 20%, rgba(109, 40, 217, 0.15) 0%, transparent 25%),
+                        radial-gradient(circle at 90% 80%, rgba(37, 99, 235, 0.15) 0%, transparent 25%);
+      font-family: 'Inter', sans-serif;
+      color: var(--text-body);
       margin: 0;
-      min-height: 100vh;
-     
-    }
-   
-.main-header {
-  padding: 1.2rem 7%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: #f7fbff;
-  box-shadow: 0 3px 18px rgba(25,118,210,0.08);
-  border-bottom: 1.5px solid #e3f2fd;
-  position: sticky;
-  top: 0;
-  left: 0;
-  z-index: 50;
-  animation: fadeInDrop 1.1s;
-}
+  }
 
-@keyframes fadeInDrop {
-  0% { opacity: 0; transform: translateY(-22px);}
-  100% { opacity: 1; transform: translateY(0);}
-}
-
-.logo {
-  font-weight: 900;
-  font-size: 1.45rem;
-  color: #1976d2;
-  letter-spacing: 2px;
-  transition: color .18s;
-  cursor: pointer;
-  animation: pulseLogo 1.5s infinite alternate;
-}
-
-@keyframes pulseLogo {
-  from { text-shadow: 0 0 0 #90caf9; }
-  to   { text-shadow: 0 0 12px #90caf9; color: #1565c0;}
-}
-
-.nav-menu ul {
-  list-style: none;
-  display: flex;
-  gap: 2.5rem;
-  margin: 0;
-  align-items: center;
-}
-
-.nav-menu a {
-  color: #22304a;
-  font-weight: 600;
-  text-decoration: none;
-  font-size: 1.08rem;
-  padding: 0.1rem 0;
-  border-radius: 7px;
-  transition: color 0.28s, background .18s;
-}
-
-.nav-menu a:hover, .nav-menu a:focus {
-  color: #fff;
-  background: #1976d2;
-  text-decoration: none;
-}
-
-.nav-toggle {
-  background: #e3f2fd;
-  color: #1976d2;
-  border: none;
-  border-radius: 14px;
-  width: 42px;
-  height: 42px;
-  font-size: 1.5rem;
-  display: none;
-  align-items: center;
-  justify-content: center;
-  margin-left: 1.2rem;
-  box-shadow: 0 2px 9px rgba(25,118,210,0.09);
-  cursor: pointer;
-  transition: background .18s, color .18s;
-}
-.nav-toggle:hover, .nav-toggle:focus {
-  background: #1976d2;
-  color: #fff;
-}
-
-.nav-mobile {
-  display: none;
-  position: fixed;
-  top: 0; left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: rgba(25, 118, 210, 0.96);
-  z-index: 90;
-  padding-top: 75px;
-  animation: fadeNavMobile 0.8s;
-}
-@keyframes fadeNavMobile {
-  0% { opacity: 0; transform: scaleY(.92);}
-  100% { opacity: 1; transform: scaleY(1);}
-}
-
-.nav-mobile ul {
-  display: flex;
-  flex-direction: column;
-  gap: 2.5rem;
-  align-items: left;
-  margin: 0;
-}
-
-.nav-mobile ul li{
-  list-style: none;
-}
-
-.nav-mobile a {
-  color: #fff;
-  font-size: 1.34rem;
-  font-weight: 700;
-  text-decoration: none;
-  padding: 1rem 2.2rem;
-  border-radius: 16px;
-  transition: background .17s;
-  letter-spacing: 1px;
-}
-.nav-mobile a:hover, .nav-mobile a:focus {
-  background: #90caf9;
-  color: #1976d2;
-}
-
-@media (max-width: 800px) {
+  /* --- HEADER --- */
   .main-header {
-    padding: 1.2rem 2.5vw;
+    padding: 1rem 5%;
+    display: flex; justify-content: space-between; align-items: center;
+    background: var(--bg-glass); backdrop-filter: blur(12px);
+    position: sticky; top: 0; z-index: 1000;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
   }
-  .nav-menu {
-    display: none;
-  }
-  .nav-toggle {
-    display: flex;
-  }
-  .logo { font-size: 1.2rem; }
-}
-
-/* For desktop, hide mobile nav */
-@media (min-width: 801px) {
-  .nav-mobile { display: none !important; }
-}
-
-    
-    
-   .hero-section {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 3rem;
-  padding: 4.5rem 8% 2.5rem 8%;
-  margin: 0 auto;
-  flex-wrap: wrap;
-  background: #f7fbff;
-  max-width: 100vw;
-}
-
-.hero-img-bg {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 240px;
-  display: none;
-}
-
-.hero-img-glow7 {
-  position: absolute;
-  width: 270px;
-  height: 270px;
-  border-radius: 50%;
-  background: radial-gradient(circle, #b3e5fc 38%, #1565c0 85%);
-  z-index: 1;
-  filter: blur(8px);
-  opacity: 0.6;
-}
-
-.hero-img {
-  position: relative;
-  z-index: 2;
-  width: 220px;
-  height: 220px;
-  object-fit: cover;
-  border-radius: 50%;
-  border: 7px solid #fff;
-  box-shadow: 0 8px 32px rgba(21,101,192,0.12);
-  background: #fff;
-}
-
-.hero-content {
-  flex: 1 1 380px;
-  min-width: 260px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding-top: 0.8rem;
-}
-
-.hero-title {
-  font-size: 2.7rem;
-  font-weight: 900;
-  color: #1565c0;
-  margin: 0 0 0.8rem 0;
-  letter-spacing: 1.1px;
-}
-
-.hero-subtitle {
-  font-size: 2rem;
-  font-weight: 700;
-  color: #22304a;
-  margin-bottom: 1.2rem;
-  letter-spacing: 1px;
-}
-
-.hero-intro {
-  font-size: 1.16rem;
-  color: #385484;
-  margin-bottom: 2.3rem;
-  line-height: 1.7;
-  max-width: 420px;
-}
-
-.hero-intro .highlight {
-  color: #1976d2;
-  font-weight: 700;
-}
-
-.hero-btns {
-  display: flex;
-  gap: 1.2rem;
-  flex-wrap: wrap;
-}
-
-.hero-btn {
-  display: inline-flex;
-  align-items: center;
-  padding: .77rem 2.15rem;
-  font-size: 1.12rem;
-  border-radius: 18px;
-  background: #1976d2;
-  color: #fff;
-  font-weight: 700;
-  border: none;
-  box-shadow: 0 4px 18px rgba(25, 118, 210, .09);
-  cursor: pointer;
-  transition: background 0.2s, transform .13s;
-  text-decoration: none;
-  letter-spacing: 1px;
-}
-
-.hero-btn.secondary {
-  background: #fff;
-  color: #22304a;
-  border: 2px solid #1976d2;
-  transition: background 0.2s, color 0.2s;
-}
-
-.hero-btn:hover, .hero-btn:focus {
-  background: #1565c0;
-  color: #fff;
-  transform: scale(1.04);
-}
-
-.hero-btn.secondary:hover, .hero-btn.secondary:focus {
-  background: #e3f2fd;
-  color: #1976d2;
-}
-
-.hero-btn i {
-  margin-right: 0.7em;
-  font-size: 1.11em;
-}
-
-@media (max-width: 900px) {
-  .hero-section {
-    flex-direction: column;
-    gap: 2.2rem;
-    text-align: center;
-    padding: 2.8rem 2.5vw 1.5rem 2.5vw;
-    max-width: 100vw;
-  }
-  .hero-img-bg {
-    margin: 0 auto;
-  }
-  .hero-img {
-    width: 140px;
-    height: 140px;
+  .logo { font-weight: 900; font-size: 1.5rem; color: #fff; letter-spacing: 1px; z-index: 1001; }
   
+  /* Desktop Nav */
+  .nav-menu ul { list-style: none; display: flex; gap: 2rem; margin: 0; }
+  .nav-menu a { color: var(--text-main); font-weight: 600; text-decoration: none; transition: 0.3s; }
+  .nav-menu a:hover { color: var(--accent-glow); }
+
+  /* Hamburger Icon */
+  .nav-toggle { 
+      display: none; background: none; border: none; color: #fff; font-size: 1.8rem; cursor: pointer; z-index: 1001;
   }
-  .hero-img-glow7 {
-    width: 170px;
-    height: 170px;
+
+  /* Mobile Full Screen Menu */
+  .mobile-nav-overlay {
+      position: fixed; top: 0; left: 0; width: 100%; height: 100vh;
+      background: var(--bg-dark);
+      display: flex; flex-direction: column; justify-content: center; align-items: center;
+      z-index: 1000;
+      transform: translateY(-100%); /* Hidden by default */
+      transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   }
-  .hero-content {
-    align-items: center;
-    padding-top: 0;
+  .mobile-nav-overlay.active { transform: translateY(0); } /* Show menu */
+  
+  .mobile-nav-links { list-style: none; text-align: center; padding: 0; }
+  .mobile-nav-links li { margin: 2rem 0; }
+  .mobile-nav-links a { font-size: 1.5rem; font-weight: 700; color: #fff; text-decoration: none; }
+
+  /* --- HERO SECTION --- */
+  .hero-section {
+    padding: 6rem 5% 4rem 5%;
+    max-width: 1200px; margin: 0 auto;
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 3rem;
   }
-  .hero-title { font-size: 1.55rem; }
-  .hero-subtitle { font-size: 1.18rem; }
-  .hero-intro { font-size: 1rem; }
-  .hero-btns { justify-content: center; }
-}
-
-    
-.card-categories {
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  gap: 2rem;
-  width: 100%;
-  max-width: 1120px;
-  margin: 0 auto;
-}
-
-.card.category-card {
-  background: linear-gradient(120deg, #f0f6ff 50%, #e3f2fd 100%);
-  border-radius: 18px;
-  box-shadow: 0 4px 20px rgba(25, 118, 210, 0.08);
-  transition: box-shadow .18s;
-  margin-bottom: 0;
-  border: 2px solid #e3f2fd;
-  width: 90%;
-  margin: 0 auto;
-}
-
-.card.category-card.open {
-  box-shadow: 0 12px 40px rgba(21,101,192,.11);
-  border-color: #90caf9;
-}
-
-.card-toggle {
-  width: 100%;
-  background: none;
-  border: none;
-  display: flex;
-  align-items: center;
-  padding: 1.3rem 1.3rem 1.05rem 1.3rem;
-  gap: 1rem;
-  cursor: pointer;
-  outline: none;
-  font-family: inherit;
-}
-
-.card-icon {
-  background: #1976d2;
-  color: #fff;
-  width: 42px;
-  height: 42px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 13px;
-  font-size: 1.42rem;
-  margin-right: 0.4rem;
-}
-
-.card-title {
-  flex: 1;
-  font-size: 1.2rem;
-  font-weight: 700;
-  color: #18354B;
-  letter-spacing: 1px;
-}
-
-.card-expand {
-  color: #1565c0;
-  font-size: 1.1rem;
-  transition: transform .3s;
-}
-
-.card.open .card-expand {
-  transform: rotate(180deg);
-  color: #1976d2;
-}
-
-.card-content {
-  background: #e3f2fd;
-  border-radius: 0 0 17px 17px;
-  padding: 1.2rem 1.4rem 1.7rem 1.4rem;
-  display: none;
-  animation: fadein .36s;
-}
-
-@keyframes fadein {
-  from { opacity: 0; transform: scaleY(.97);}
-  to { opacity: 1; transform: scaleY(1);}
-}
-
- .card.open .card-content {
-  display: block
-}
-
-.video-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.4rem;
-  justify-content: center;
-  padding-top: 0.7rem;
-}
-
-.video-list video {
-  min-width: 200px;
-  min-height: 500px;
-  max-height: 500px;
-  background: #fff;
-  border-radius: 13px;
-  box-shadow: 0 2px 12px rgba(25, 118, 210, .10);
-  outline: none;
-  transition: box-shadow .17s, transform .16s;
-  object-fit: cover;
-  margin: 0;
-}
-
-.video-list video:focus,
-.video-list video:hover {
-  box-shadow: 0 8px 32px rgba(25,118,210,0.18);
-  transform: scale(1.03);
-}
-
-@media (max-width: 900px) {
-  .card-categories {
-    max-width: 97vw;
-    gap: 1.2rem;
+  .hero-content { flex: 1; }
+  .hero-title { font-size: 3.5rem; font-weight: 900; color: #fff; line-height: 1.1; margin-bottom: 1rem; }
+  .hero-title span { background: var(--main-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+  .hero-subtitle { font-size: 1.2rem; margin-bottom: 2rem; max-width: 500px; }
+  
+  .hero-btns a {
+      text-decoration: none; padding: 0.8rem 2rem; border-radius: 50px; font-weight: 700; margin-right: 10px; display: inline-block;
   }
-  .video-list {
-    gap: 1rem;
-    justify-content: center;
-  }
-  .video-list video {
-    width: 98vw;
-    height: 160px;
-  }
-}
+  .btn-primary { background: var(--main-gradient); color: #fff; box-shadow: 0 0 20px rgba(124, 58, 237, 0.4); }
+  .btn-secondary { border: 1px solid rgba(255,255,255,0.3); color: #fff; }
 
-.reel-cover-section {
-  padding: 4rem 8%;
-  background: #f7fbff;
-  border-radius: 36px;
-  box-shadow: 0 5px 32px rgba(25,118,210,0.08);
-  max-width: 1100px;
-  margin: 3rem auto;
-}
-.reel-cover-title {
-  font-size: 2.1rem;
-  font-weight: 800;
-  color: #1976d2;
-  margin-bottom: 2.7rem;
-  text-align: center;
-  letter-spacing: 1.2px;
-}
-.reel-cover-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 2.1rem;
-  justify-content: center;
-  align-items: stretch;
-}
-.reel-cover-card {
-  background: linear-gradient(130deg, #eef6fc 60%, #e0effc 100%);
-  border-radius: 20px;
-  box-shadow: 0 10px 38px rgba(21,101,192,0.12);
-  padding: 1.3rem 1.3rem 0.8rem 1.3rem;
-  max-width: 320px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  transition: box-shadow .18s, transform .15s;
-  position: relative;
-}
-.reel-cover-card:hover {
-  box-shadow: 0 20px 60px rgba(25,118,210,0.16);
-  transform: translateY(-6px) scale(1.02);
-}
-.reel-cover-img {
-  width: 100%;
-  max-width: 260px;
-  border-radius: 15px;
-  object-fit: cover;
-  margin-bottom: 1.2rem;
-  box-shadow: 0 4px 18px rgba(25,118,210,0.14);
-  background: #fff;
-}
-.reel-cover-caption {
-  font-size: 1.11rem;
-  font-weight: 700;
-  color: #1565c0;
-  letter-spacing: 0.5px;
-  text-align: center;
-  margin: 0.6rem 0 1rem 0;
-}
-@media (max-width: 800px) {
-  .reel-cover-list {
-    grid-template-columns: 1fr;
-    gap: 1.2rem;
+  .hero-img-box {
+      flex: 1;
+      display: flex; 
+      justify-content: center; position: relative;
   }
-  .reel-cover-card {
-    max-width: 97vw;
-    font-size: 1rem;
-    padding: 1.2rem 0.6rem 0.7rem 0.9rem;
+  .hero-img-box img {
+      width: 100%; height: 100%; object-fit: cover;
+      border-radius: 50%;
+      
+     
   }
-  .reel-cover-section {
-    padding: 2.2rem 2% 2rem 2%;
-    border-radius: 18px;
-    margin: 2rem auto;
-  }
-}
 
-
-
-.testimonial-section {
-  padding: 4rem 8% 4rem 8%;
-  background: #f7fbff;
-  border-radius: 36px;
-  box-shadow: 0 5px 32px rgba(25,118,210,0.07);
-  max-width: 1200px;
-  margin: 3rem auto;
-}
-.testimonial-title {
-  font-size: 2.1rem;
-  font-weight: 800;
-  color: #1976d2;
-  margin-bottom: 2.7rem;
-  text-align: center;
-  letter-spacing: 1.2px;
-}
-.testimonial-slider-row {
-  overflow-x: hidden;
-  width: 100%;
-  position: relative;
-  margin-top: 2rem;
-}
-.testimonial-track-row {
-  display: flex;
-  gap: 2.5rem;
-  align-items: stretch;
-  width: max-content;
-  animation: testimonialScroll 18s linear infinite;
-}
-@keyframes testimonialScroll {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
-.testimonial-card {
-  background: linear-gradient(130deg, #eef6fc 68%, #e0effc 100%);
-  border-radius: 22px;
-  box-shadow: 0 8px 28px rgba(21,101,192,0.10);
-  padding: 2rem 1.6rem 1rem 1.6rem;
-  min-width: 320px;
-  max-width: 330px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  gap: 1.6rem;
-  position: relative;
-  font-size: 1.04rem;
-  transition: box-shadow .18s, transform .15s;
-}
-.testimonial-quote {
-  color: #22304A;
-  font-style: italic;
-  line-height: 1.6;
-  position: relative;
-}
-.testimonial-quote i {
-  color: #1976d2;
-  font-size: 1.3rem;
-  margin-right: 0.5rem;
-  position: absolute;
-  left: -1.1rem;
-  top: 0;
-}
-.testimonial-person {
-  display: flex;
-  align-items: center;
-  gap: 1.1rem;
-  margin-top: 0.8rem;
-}
-.testimonial-img {
-  width: 46px;
-  height: 46px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 2.5px solid #bbdefb;
-  box-shadow: 0 3px 12px rgba(25,118,210,0.05);
-}
-.testimonial-name {
-  font-weight: 700;
-  color: #1565c0;
-}
-.testimonial-role {
-  font-size: 0.97rem;
-  color: #22304A;
-}
-@media (max-width: 800px) {
-  .testimonial-track-row {
-    gap: 1.2rem;
+  /* --- SECTIONS COMMON --- */
+  .section-container { padding: 4rem 5%; max-width: 1200px; margin: 0 auto; }
+  .section-title { font-size: 2.5rem; font-weight: 800; color: #fff; text-align: center; margin-bottom: 2rem; }
+  
+  /* Tabs UI */
+  .tabs-wrapper { display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; margin-bottom: 3rem; }
+  .tab-btn {
+      background: transparent; border: 1px solid rgba(255,255,255,0.2);
+      color: var(--text-body); padding: 0.8rem 2.5rem; border-radius: 50px;
+      font-size: 1rem; font-weight: 600; cursor: pointer; transition: 0.3s;
   }
-  .testimonial-card {
-    min-width: 80vw;
-    max-width: 81vw;
-    font-size: 0.97rem;
-    padding: 1.2rem 0.6rem 0.7rem 0.9rem;
+  .tab-btn.active {
+      background: var(--main-gradient); color: #fff; border-color: transparent;
+      box-shadow: 0 0 15px rgba(124, 58, 237, 0.5);
   }
+  
+  .tab-content { display: none; animation: fadeIn 0.4s ease-in-out; }
+  .tab-content.active { display: block; }
+  
+  .category-head {
+      font-size: 1.4rem; color: #fff; margin: 3rem 0 1.5rem 0;
+      border-left: 4px solid var(--primary-color); padding-left: 1rem;
+      display: flex; align-items: center; gap: 10px;
+  }
+
+  /* --- GRIDS & CARDS --- */
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+  .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+
+  .media-card {
+      background: #000; border-radius: 16px; overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.1);
+      transition: all 0.3s ease;
+      position: relative;
+  }
+  .media-card video, .media-card img {
+      width: 100%; height: 100%; object-fit: cover; display: block;
+  }
+  .media-card:hover {
+      border-color: var(--primary-color);
+      box-shadow: 0 0 25px rgba(124, 58, 237, 0.3);
+      filter: brightness(1.1);
+  }
+
+  .ratio-9-16 { aspect-ratio: 9/16; }
+  .ratio-16-9 { aspect-ratio: 16/9; }
+  .ratio-1-1  { aspect-ratio: 1/1; }
+
+  /* ========================================
+     TESTIMONIALS (FIXED - SIDE BUTTONS)
+     ======================================== */
   .testimonial-section {
-    padding: 2rem 2% 2rem 2%;
-    border-radius: 20px;
-    margin: 2rem auto;
+     
+      padding: 5rem 8%;
+      
+      max-width: 1200px; margin: 3rem auto;
+      position: relative; overflow: hidden;
+      background: linear-gradient(to bottom, transparent, var(--bg-card));
+      border-radius: 30px;
+
   }
-}
-.contact-section {
-  padding: 4rem 8% 4rem 8%;
-  background: #f7fbff;
-  border-radius: 28px;
-  box-shadow: 0 5px 32px rgba(25,118,210,0.08);
-  max-width: 520px;
-  margin: 3rem auto;
-  text-align: center;
-}
-
-.contact-title {
-  font-size: 2.1rem;
-  font-weight: 800;
-  color: #1976d2;
-  margin-bottom: 1.1rem;
-  letter-spacing: 1.1px;
-}
-
-.contact-description {
-  color: #385484;
-  font-size: 1.08rem;
-  margin-bottom: 2.1rem;
-}
-
-.contact-links {
-  display: flex;
-  flex-direction: column;
-  gap: 1.4rem;
-  align-items: center;
-}
-
-.contact-link {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 1rem;
-  font-size: 1.21rem;
-  font-weight: 700;
-  color: #1976d2;
-  background: #e3f2fd;
-  border-radius: 18px;
-  padding: 1rem 2rem;
-  box-shadow: 0 4px 18px rgba(25,118,210,0.11);
-  text-decoration: none;
-  transition: background .17s, color .12s, transform .13s;
-  animation: fadeInUp 1s;
-}
-
-.contact-link:hover,
-.contact-link:focus {
-  background: #1976d2;
-  color: #fff;
-  transform: scale(1.05);
-  text-decoration: none;
-}
-
-.contact-link i {
-  font-size: 1.45em;
-}
-
-@media (max-width: 600px) {
-  .contact-section {
-    padding: 2.1rem 4% 2rem 4%;
-    border-radius: 18px;
-    max-width: 99vw;
+  
+  .testimonial-slider-wrapper {
+      
+      position: relative; 
+      width: 100%; 
+      display: flex; align-items: center;
+      
   }
-  .contact-link { font-size: 1rem; padding: 0.8rem 1rem;}
-}
+  
+  .testimonial-track {
+      display: flex; gap: 2rem; transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1); width: 100%;
+  }
+  
+  .testimonial-card {
+      min-width: calc(33.33% - 1.35rem); /* 3 cards desktop */
+      max-width: calc(33.33% - 1.35rem); 
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 20px; padding: 2rem;
+      display: flex; flex-direction: column; justify-content: space-between;
+      height: 450px; 
+      backdrop-filter: blur(10px);
+      flex-shrink: 0;
+      
+  }
+  
+  .t-content p { font-style: italic; font-size: 1rem; line-height: 1.6; color: #ccc; }
+  .t-author { display: flex; align-items: center; gap: 1rem; margin-top: 1rem; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 1rem;}
+  .t-avatar { width: 45px; height: 45px; background: var(--main-gradient); border-radius: 50%; }
+  .t-info h4 { color: #fff; margin: 0; font-size: 1rem; }
+  .t-info span { font-size: 0.85rem; color: var(--primary-color); }
 
-@keyframes fadeInUp {
-  0% { opacity:0; transform:translateY(22px);}
-  100% { opacity:1; transform:translateY(0);}
-}
+  /* Slider Buttons (Fixed) */
+  .slider-btn {
+      position: absolute; top: 50%; transform: translateY(-50%);
+      background: var(--bg-card); border: 1px solid var(--primary-color); color: #fff;
+      width: 45px; height: 45px; border-radius: 50%; cursor: pointer; z-index: 10;
+      display: flex; align-items: center; justify-content: center; transition: all 0.3s;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+      display: none;
+  }
+  .slider-btn:hover { background: var(--primary-color); box-shadow: 0 0 20px var(--accent-glow); }
+  .slider-btn.prev { left: -15px; }
+  .slider-btn.next { right: -15px; }
 
 
+  /* --- CONTACT --- */
+  .contact-btn {
+      display: flex; align-items: center; gap: 10px; padding: 1rem 2rem;
+      background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 12px; color: #fff; text-decoration: none; font-weight: 700; transition: 0.3s;
+  }
+  .contact-btn:hover { background: var(--main-gradient); transform: translateY(-3px); }
+  .contact-links { display: flex; justify-content: center; gap: 1.5rem; margin-top: 2rem; flex-wrap: wrap; }
+
+  /* --- MOBILE RESPONSIVE --- */
+  @media (max-width: 900px) {
+      .hero-section { flex-direction: column-reverse; text-align: center; padding-top: 4rem; }
+      .hero-img-box img { width: 250px; height: 250px; }
+      .hero-title { font-size: 2.5rem; }
+      .grid-3, .grid-2 { grid-template-columns: 1fr; }
+      .nav-menu { display: none; }
+      .nav-toggle { display: block; }
+      
+      /* Mobile Slider */
+      .testimonial-card { min-width: 100%; }
+      .slider-btn { display: none; } /* Hide buttons on mobile, swipe/auto only */
+  }
+
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
   </style>
 </head>
 <body>
-  
-  <header class="main-header" data-aos="fade-down">
+
+<header class="main-header">
   <div class="logo">M.S</div>
+  
   <nav class="nav-menu">
     <ul>
-      <li></i><a href="#portfolio">Edits</a></li>
-      <li><a href="#reel-covers">Designs</a></li>
-            <li><a href="#testimonials">Testimonials</a></li>
+      <li><a href="#video-work">Videos</a></li>
+      <li><a href="#design-work">Designs</a></li>
+      <li><a href="#testimonials">Reviews</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
-  <button class="nav-toggle" id="navToggle" aria-label="Open menu">
+
+  <button class="nav-toggle" onclick="toggleMenu()">
     <i class="fa fa-bars"></i>
   </button>
 </header>
-<nav class="nav-mobile" id="navMobile">
-  <ul>
-    <li> <a href="#portfolio">Edits</a></li>
-    <li> <a href="#reel-covers">Designs</a></li>
-    
-                <li><a href="#testimonials">Testimonials</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-</nav>
 
-  <section class="hero-section" id="hero" data-aos="fade-up">
-    <div class="hero-img-bg">
-      <div class="hero-img-glow7"></div>
-      <img src="img2.png" alt="Your Portrait" class="hero-img" height="500" />
-    </div>
-    <div class="hero-content">
-      <div class="hero-title">Hello.<br>I'm <span class="highlight">Shahid</span></div>
-      <div class="hero-subtitle">Video Editor </div>
-      <div class="hero-intro">
+<div class="mobile-nav-overlay" id="mobileNav">
+    <ul class="mobile-nav-links">
+        <li><a href="#video-work" onclick="toggleMenu()">Videos</a></li>
+        <li><a href="#design-work" onclick="toggleMenu()">Designs</a></li>
+        <li><a href="#testimonials" onclick="toggleMenu()">Reviews</a></li>
+        <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+    </ul>
+    <button class="nav-toggle" onclick="toggleMenu()" style="display:block; position:absolute; top:20px; right:20px;">
+        <i class="fa fa-times"></i>
+    </button>
+</div>
 
-        <span class="highlight">From scattered messages to sharp impact.</span><br>
-        
-        Help your clients see what’s possible, understand the value, and feel ready to take their next step.
-      </div>
+<section class="hero-section">
+  <div class="hero-content" data-aos="fade-right">
+      <h1 class="hero-title">Edits That Build Authority <br><span>Not Just Views.</span></h1>
+      <p class="hero-subtitle">Elevate your personal brand with premium video editing. I help creators and experts command attention and build lasting trust.
+</p>
       <div class="hero-btns">
-        <a href="#contact" class="hero-btn"><i class="fa fa-play"></i> Hire Me </a>
-        <a href="#portfolio" class="hero-btn secondary"><i class="fa fa-file"></i> My Work</a>
+          <a href="#contact" class="btn-primary">Hire Me</a>
+          <a href="#video-work" class="btn-secondary">My Work</a>
       </div>
-    </div>
-  </section>
+  </div>
   
-  <section class="video-showcase" id="portfolio">
-  
-    <h2 class="reel-cover-title" data-aos="fade-up">Video Editing</h2>
-    
-  
-  <div class="card-categories">
-    <!-- Cinematic Edits -->
-    <div class="card category-card" data-aos="fade-up" >
-      <button class="card-toggle" onclick="toggleCard(this)">
-        <div class="card-icon"><i class="fa fa-film"></i></div>
-        <div class="card-title">Talking Head</div>
-        <div class="card-expand"><i class="fa fa-chevron-down"></i></div>
-      </button>
-      <div class="card-content">
-        <div class="video-list">
-          <video src="talkinghead1.mp4" controls></video>
-          <video src="talkinghead2.mp4" controls></video>
-          <video src="talkinghead3.mp4" controls></video>
-
-        </div>
-      </div>
-    </div>
-    <!-- Color Grading -->
-    <div class="card category-card" data-aos="fade-up" data-aos-delay="70">
-      <button class="card-toggle" onclick="toggleCard(this)">
-        <div class="card-icon"><i class="fa fa-paint-brush"></i></div>
-        <div class="card-title">Faceless</div>
-        <div class="card-expand"><i class="fa fa-chevron-down"></i></div>
-      </button>
-      <div class="card-content">
-        <div class="video-list">
-          <video src="faceless1.mp4" controls></video>
-          <video src="faceless2.mp4" controls></video>
-          <video src="faceless3.mp4" controls></video>
-          
-        </div>
-      </div>
-    </div>
-    <!-- Motion Graphics -->
-    <div style="display: none;" class="card category-card" data-aos="fade-up" data-aos-delay="140">
-      <button class="card-toggle" onclick="toggleCard(this)">
-        <div class="card-icon"><i class="fa fa-bolt"></i></div>
-        <div class="card-title">Motion Graphics</div>
-        <div class="card-expand"><i class="fa fa-chevron-down"></i></div>
-      </button>
-      <div class="card-content">
-        <div class="video-list">
-          <video src="motion1.mp4" controls></video>
-          <video src="reel4.mp4" controls></video>
-          <video src="motion3.mp4" controls></video>
-          <video src="motion4.mp4" controls></video>
-          <video src="motion5.mp4" controls></video>
-        </div>
-      </div>
-    </div>
+  <div class="hero-img-box" data-aos="fade-left">
+      <img src="shahid.png" alt="Shahid Profile" >
   </div>
 </section>
 
-<section class="reel-cover-section" id="reel-covers">
-  <h2 class="reel-cover-title" data-aos="fade-up">Reel Cover Designs</h2>
-  <div class="reel-cover-list">
-    <div class="reel-cover-card" data-aos="zoom-in">
-      <img src="july cover 1.png" alt="Reel Cover Design 1" class="reel-cover-img" />
-      <div class="reel-cover-caption"></div>
+<section id="video-work" class="section-container">
+    <h2 class="section-title">Video Editing</h2>
+
+    <div class="tabs-wrapper">
+        <button class="tab-btn active" onclick="openVideoTab('short-form', this)">Short Form</button>
+        <button class="tab-btn" onclick="openVideoTab('long-form', this)">Long Form</button>
     </div>
-    <div class="reel-cover-card" data-aos="zoom-in" data-aos-delay="60">
-      <img src="july cover 2.png" alt="Reel Cover Design 2" class="reel-cover-img" />
-      <div class="reel-cover-caption"></div>
+
+    <div id="short-form" class="tab-content active video-tab">
+        <div class="category-head"><i class="fa fa-user"></i> Talking Head</div>
+        <div class="grid-3">
+            <div class="media-card ratio-9-16"><video src="talkinghead1.mp4" controls playsinline></video></div>
+            <div class="media-card ratio-9-16"><video src="talkinghead2.mp4" controls playsinline></video></div>
+            <div class="media-card ratio-9-16"><video src="talkinghead3.mp4" controls playsinline></video></div>
+        </div>
+
+        <div class="category-head"><i class="fa fa-mask"></i> Faceless</div>
+        <div class="grid-3">
+            <div class="media-card ratio-9-16"><video src="faceless1.mp4" controls playsinline></video></div>
+            <div class="media-card ratio-9-16"><video src="faceless2.mp4" controls playsinline></video></div>
+            <div class="media-card ratio-9-16"><video src="faceless3.mp4" controls playsinline></video></div>
+        </div>
     </div>
-    <div class="reel-cover-card" data-aos="zoom-in" data-aos-delay="120">
-      <img src="july cover 3.png" alt="Reel Cover Design 3" class="reel-cover-img" />
-      <div class="reel-cover-caption"></div>
+
+    <div id="long-form" class="tab-content video-tab">
+        <div class="category-head"><i class="fa fa-play"></i> Long Form Video</div>
+        <div class="grid-3">
+            <div class="media-card ratio-16-9"><video src="yt_1.mp4" controls playsinline></video></div>
+            <div class="media-card ratio-16-9"><video src="yt_2.mp4" controls playsinline></video></div>
+            <div class="media-card ratio-16-9"><video src="yt_3.mp4" controls playsinline></video></div>
+        </div>
     </div>
-    <div class="reel-cover-card" data-aos="zoom-in" data-aos-delay="180">
-      <img src="july cover 4.png" alt="Reel Cover Design 4" class="reel-cover-img" />
-      <div class="reel-cover-caption"></div>
+</section>
+
+<section id="design-work" class="section-container">
+    <h2 class="section-title">Graphic Design</h2>
+
+    <div class="tabs-wrapper">
+        <button class="tab-btn active" onclick="openDesignTab('reel-covers', this)">Reel Covers</button>
+        <button class="tab-btn" onclick="openDesignTab('thumbnails', this)">Thumbnails</button>
+        <button class="tab-btn" onclick="openDesignTab('ad-creative', this)">Ad Creatives</button>
     </div>
-    <!-- Add more cover cards as needed -->
-  </div>
+
+    <div id="reel-covers" class="tab-content active design-tab">
+        <div class="category-head"><i class="fa fa-mobile-alt"></i> Reel Covers</div>
+        <div class="grid-3">
+            <div class="media-card ratio-9-16"><img src="reel_cover_1.png" alt="Reel Cover 1"></div>
+            <div class="media-card ratio-9-16"><img src="reel_cover_2.png" alt="Reel Cover 2"></div>
+            <div class="media-card ratio-9-16"><img src="reel_cover_3.png" alt="Reel Cover 3"></div>
+        </div>
+    </div>
+
+    <div id="thumbnails" class="tab-content design-tab">
+        <div class="category-head"><i class="fa fa-play"></i> YouTube Thumbnails</div>
+        <div class="grid-2">
+            <div class="media-card ratio-16-9"><img src="thumbnail_1.png" alt="YT Thumb 1"></div>
+            <div class="media-card ratio-16-9"><img src="thumbnail_2.png" alt="YT Thumb 2"></div>
+            <div class="media-card ratio-16-9"><img src="thumbnail_3.png" alt="YT Thumb 3"></div>
+        </div>
+    </div>
+
+    <div id="ad-creative" class="tab-content design-tab">
+        <div class="category-head"><i class="fa fa-bullhorn"></i> High CTR Ads</div>
+        <div class="grid-3">
+            <div class="media-card"><img src="ad1.png" alt="Ad 1"></div>
+            <div class="media-card"><img src="ad2.png" alt="Ad 2"></div>
+            <div class="media-card"><img src="ad3.png" alt="Ad 3"></div>
+        </div>
+    </div>
 </section>
 
 
-
-<section class="testimonial-section" id="testimonials">
-  <h2 class="testimonial-title" data-aos="fade-up">Client Testimonials</h2>
-  <div class="testimonial-slider-row">
-    <div class="testimonial-track-row" id="testimonialTrackRow" style="background:white;">
-      <div class="testimonial-card">
-        <div class="testimonial-quote">
-          <i class="fa fa-quote-left"></i>
-          <p>Shahid truly transformed our reel now it getting more views then before </p>
-        </div>
-        <div class="testimonial-person">
-          
-          <div>
-            <div class="testimonial-name">Harshit Rai
-</div>
-            <div class="testimonial-role">snipptech founder</div>
-          </div>
-        </div>
-      </div>
-      <div class="testimonial-card">
-        <div class="testimonial-quote">
-          <i class="fa fa-quote-left"></i>
-          <p>i really like how shahid take a time to understand my needs before start editing and deliver the work that suit for my brand </p>
-        </div>
-        <div class="testimonial-person">
-          
-          <div>
-            <div class="testimonial-name">Simran nazz</div>
-            <div class="testimonial-role">social media manager </div>
-          </div>
-        </div>
-      </div>
-      <div class="testimonial-card">
-        <div class="testimonial-quote">
-          <i class="fa fa-quote-left"></i>
-          <p>shahid designs are great its just double my views on Instagram and he explained meaning behind every design concept discuss need and understand goal of design</p>
-        </div>
-        <div class="testimonial-person">
-          
-          <div>
-            <div class="testimonial-name">James Smith
-</div>
-            <div class="testimonial-role">sales coach</div>
-          </div>
-        </div>
-      </div>
-      <!-- You can add more testimonial cards here -->
-    </div>
-  </div>
-</section>
-
-  
-<section class="contact-section" id="contact" data-aos="fade-up">
-  <h2 class="contact-title">Let’s work together</h2>
-  <p class="contact-description">
-    Your content deserves sales, not just likes DM me now and watch your brand dominate.
-
-  </p>
-  <div class="contact-links">
-    <a href="mailto:empervix@gmail.com" class="contact-link" title="Email">
-      <i class="fa fa-envelope"></i> Gmail
-    </a>
-    <a href="https://instagram.com/empervix" target="_blank" class="contact-link" title="Instagram">
-      <i class=""> 
-      <img src="insta.png" alt="" height="40px" /> 
-      </i> Instagram
-    </a>
-    <a href="https://wa.me/7499074966" target="_blank" class="contact-link" title="WhatsApp">
-      <i class="">
-        <img src="whatsapp.png" alt="" height="40px" /> 
+<section id="testimonials" class="testimonial-section">
+    <h2 class="section-title">What Clients Say</h2>
+    <div class="testimonial-slider-wrapper">
         
-      </i> WhatsApp
-    </a>
-  </div>
+        <button class="slider-btn prev" id="prevBtn"><i class="fa fa-chevron-left"></i></button>
+        
+        <div class="testimonial-track" id="testimonialTrack">
+            
+            <div class="testimonial-card">
+                <div class="t-content">
+                    <i class="fa fa-quote-left" style="color:var(--primary-color); font-size:1.5rem; margin-bottom:10px;"></i>
+                    <p>"I really appreciate how Shahid understood my requirements before starting. His questions and editing style made a big difference. The final result exceeded my expectations.
+Keep it up, Shahid!"</p>
+                </div>
+                <div class="t-author">
+                    <div class="t-avatar"><img src="simran.png" alt="" class="t-avatar"></div>
+                    <div class="t-info"><h4>Simram Nazz</h4><span> Graphics Designer</span></div>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="t-content">
+                     <i class="fa fa-quote-left" style="color:var(--primary-color); font-size:1.5rem; margin-bottom:10px;"></i>
+                    <p>"Shahid is doing a good job with my edits. His basics are strong and he takes feedback positively. With a little more polishing, he can become even better."</p>
+                </div>
+                <div class="t-author">
+                    <div class="t-avatar"><img src="riyanshi.png" alt="" class="t-avatar"></div>
+                    <div class="t-info"><h4>Riyanshi Paswaan </h4><span>Content Creator</span></div>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="t-content">
+                     <i class="fa fa-quote-left" style="color:var(--primary-color); font-size:1.5rem; margin-bottom:10px;"></i>
+                    <p>"Great work Shahid Really happy with the quality looking forward to more amazing work like this."</p>
+                </div>
+                <div class="t-author">
+                    <div class="t-avatar"><img src="harshit.png" alt="" class="t-avatar"></div>
+                    <div class="t-info"><h4>Harshit Rai</h4><span> Digital Marketer</span></div>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="t-content">
+                     <i class="fa fa-quote-left" style="color:var(--primary-color); font-size:1.5rem; margin-bottom:10px;"></i>
+                    <p>"Your cover designs are seriously impressive, Shahid. I’m really looking forward to working with you long term and creating some great stuff together"</p>
+                </div>
+                <div class="t-author">
+                    <div class="t-avatar"><img src="bitthal.png" alt="" class="t-avatar"></div>
+                    <div class="t-info"><h4>Bitthal Mahashivratri </h4><span>SM Manager</span></div>
+                </div>
+            </div>
+
+        </div>
+        
+        <button class="slider-btn next" id="nextBtn"><i class="fa fa-chevron-right"></i></button>
+
+    </div>
 </section>
 
 
+<section id="contact" class="section-container" style="text-align: center;">
+    <h2 class="section-title">Let's Work Together</h2>
+    <p style="color:var(--text-body); margin-bottom:2rem;">Stop ignoring the potential of your content.</p>
+    <div class="contact-links">
+        <a href="mailto:empervix@gmail.com" class="contact-btn"><i class="fa fa-envelope"></i> Email Me</a>
+        <a href="https://instagram.com/empervix" target="_blank" class="contact-btn"><i class="fab fa-instagram"></i> Instagram</a>
+        <a href="https://wa.me/7499074966" target="_blank" class="contact-btn"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+    </div>
+</section>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
 <script>
-const navToggle = document.getElementById('navToggle');
-const navMobile = document.getElementById('navMobile');
+    AOS.init({ once: true, duration: 800 });
 
-navToggle.addEventListener('click', function() {
-  navMobile.style.display = navMobile.style.display === 'flex' ? 'none' : 'flex';
-});
-
-navMobile.addEventListener('click', function(e) {
-  if (e.target.tagName === 'A' || e.target === navMobile) {
-    navMobile.style.display = 'none';
-  }
-});
-</script>
-
-  
-  
-  
-  <!-- Optional: Add your portfolio, about, contact, etc. sections here -->
-
-  <!-- AOS Animations -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-  <script>AOS.init({ once: true });</script>
-  
-  <script>
-function toggleCard(btn) {
-  const card = btn.closest('.card');
-  const allCards = document.querySelectorAll('.card.category-card');
-  allCards.forEach(c => {
-    if (c !== card) c.classList.remove('open');
-  });
-  card.classList.toggle('open');
-}
-</script>
-
-
-<script>
-// Function to toggle cards (accordion-style)
-function toggleCard(btn) {
-  const card = btn.closest('.card');
-  const allCards = document.querySelectorAll('.card.category-card');
-
-  // Close all other cards when one is clicked
-  allCards.forEach(c => {
-    if (c !== card) {
-      c.classList.remove('open');
-      c.querySelector('.card-content').style.maxHeight = null;
+    // --- MOBILE MENU TOGGLE ---
+    function toggleMenu() {
+        document.getElementById('mobileNav').classList.toggle('active');
     }
-  });
 
-  // Toggle the clicked card
-  card.classList.toggle('open');
-  const content = card.querySelector('.card-content');
+    // --- VIDEO TABS ---
+    function openVideoTab(tabId, btn) {
+        document.querySelectorAll('.video-tab').forEach(t => t.classList.remove('active'));
+        btn.parentElement.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+        document.getElementById(tabId).classList.add('active');
+        btn.classList.add('active');
+    }
 
-  if (card.classList.contains('open')) {
-    content.style.maxHeight = content.scrollHeight + "px";
-    content.style.transition = "max-height .5s cubic-bezier(.42,1.18,.46,1)";
-  } else {
-    content.style.maxHeight = null;
-  }
-}
+    // --- DESIGN TABS ---
+    function openDesignTab(tabId, btn) {
+        document.querySelectorAll('.design-tab').forEach(t => t.classList.remove('active'));
+        btn.parentElement.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+        document.getElementById(tabId).classList.add('active');
+        btn.classList.add('active');
+    }
 
-// This code runs after the page content has loaded
-document.addEventListener('DOMContentLoaded', function() {
-  // Select ALL cards with the class '.category-card'
-  const allCards = document.querySelectorAll('.card.category-card');
+    // --- TESTIMONIAL SLIDER LOGIC ---
+    const track = document.getElementById('testimonialTrack');
+    const nextBtn = document.getElementById('nextBtn');
+    const prevBtn = document.getElementById('prevBtn');
+    let currentIndex = 0;
 
-  // Loop through each card and open it by default
-  allCards.forEach(card => {
-    card.classList.add('open');
-    const content = card.querySelector('.card-content');
-    // Set the max-height so the content is visible
-    content.style.maxHeight = content.scrollHeight + "px";
-  });
-});
+    function getCardsPerView() {
+        return window.innerWidth >= 900 ? 3 : 1;
+    }
+
+    function updateSlider() {
+        const cards = document.querySelectorAll('.testimonial-card');
+        const perView = getCardsPerView();
+        
+        if (currentIndex < 0) currentIndex = cards.length - perView;
+        if (currentIndex > cards.length - perView) currentIndex = 0;
+
+        const movePercent = (109 / perView) * currentIndex;
+        track.style.transform = `translateX(-${movePercent}%)`;
+    }
+
+    nextBtn.addEventListener('click', () => { currentIndex++; updateSlider(); });
+    prevBtn.addEventListener('click', () => { currentIndex--; updateSlider(); });
+    window.addEventListener('resize', () => { currentIndex = 0; updateSlider(); });
+    
+    // Auto Play
+    setInterval(() => { currentIndex++; updateSlider(); }, 5000);
+    
 </script>
-
-
 
 </body>
 </html>
-
-
